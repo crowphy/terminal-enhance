@@ -2,7 +2,7 @@
 ###
  # @Author: crowphy
  # @Date: 2021-04-26 18:42:25
- # @LastEditTime: 2021-04-26 20:21:08
+ # @LastEditTime: 2021-04-26 21:18:39
  # @LastEditors: Please set LastEditors
  # @Description: In User Settings Edit
  # @FilePath: /beautify-terminal/index.sh
