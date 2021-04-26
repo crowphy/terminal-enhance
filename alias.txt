@@ -1,6 +1,3 @@
-# beautify-terminal
-终端美化+快捷命令脚本
-```shell
 alias gn="git clone"
 
 alias gst="git status"
@@ -20,4 +17,3 @@ gpr () { cd $(git rev-parse --show-toplevel) && git add . && git commit -m "$1" 
 alias grc="git add . && git rebase --continue"
 alias grs="git add . && git rebase --skip"
 alias gra="git add . && git rebase --abort"
-```
