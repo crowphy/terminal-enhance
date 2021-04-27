@@ -1,4 +1,7 @@
 # 终端命令组合与美化
+>一键安装常用的终端插件，组合常用的命令，让你少敲几下键盘
+## 效果
+![](./example.png)
 ## 使用说明:
 1. `git clone https://github.com/crowphy/command-combination.git`
 2. `cd command-combination`
