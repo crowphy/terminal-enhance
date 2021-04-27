@@ -2,8 +2,8 @@
 ###
  # @Author: crowphy
  # @Date: 2021-04-26 18:42:25
- # @LastEditTime: 2021-04-27 14:37:19
- # @LastEditors: Please set LastEditors
+ # @LastEditTime: 2021-04-27 21:39:35
+ # @LastEditors: crowphywu
  # @Description: In User Settings Edit
  # @FilePath: /beautify-terminal/index.sh
 ### 
@@ -45,6 +45,24 @@ then
     echo .cmdrc path has existed
 else
     echo "source ${cmdrcpath}" >> ~/.zshrc
+fi
+# 自己用的一些特殊组合
+selfrcpath="$(pwd)/$(dirname $0)/.selfrc"
+
+if [ -f $selfrcpath ]
+then
+    echo .selfrc has existed
+else
+    touch .selfrc
+fi
+
+selfrcexist="$(cat ~/.zshrc | grep ${selfrcpath})"
+
+if [[ $selfrcexist ]]
+then
+    echo ".selfrc path has existed in .zshrc"
+else
+    echo "source ${selfrcpath}" >> ~/.zshrc
 fi
 
 echo done
