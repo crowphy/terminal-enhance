@@ -1,8 +1,5 @@
 ## git相关
 alias gn="git clone"
-#分支操作
-alias gb="git branch"
-alias gbd="git branch -D"
 
 alias gst="git status"
 alias gct="git checkout"
@@ -21,7 +18,3 @@ gpr () { cd $(git rev-parse --show-toplevel) && git add . && git commit -m "$1" 
 alias grc="git add . && git rebase --continue"
 alias grs="git add . && git rebase --skip"
 alias gra="git add . && git rebase --abort"
-
-# log
-alias gg="git log"
-alias ggo="git log --oneline"

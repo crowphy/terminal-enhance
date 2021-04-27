@@ -1,5 +1,11 @@
-# beautify-terminal
-终端美化+快捷命令脚本
+# 终端命令组合
+## 使用说明:
+1. `git clone https://github.com/crowphy/command-combination.git`
+2. `cd command-combination`
+3. `chmod +x index.sh`
+4. `./index.sh`
+
+## 当前涵盖的命令别名
 ```shell
 alias gn="git clone"
 
@@ -21,3 +27,6 @@ alias grc="git add . && git rebase --continue"
 alias grs="git add . && git rebase --skip"
 alias gra="git add . && git rebase --abort"
 ```
+
+## 其他
+如果想添加其他命令别名可以直接编辑该目录下的`.cmdrc`即可，如果有其他共享的可以直接提mr合入或者提issue
