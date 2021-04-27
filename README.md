@@ -3,8 +3,8 @@
 ## 效果
 ![](./example.png)
 ## 使用说明:
-1. `git clone https://github.com/crowphy/command-combination.git`
-2. `cd command-combination`
+1. `git clone https://github.com/crowphy/terminal-enhance.git`
+2. `cd terminal-enhance`
 3. `chmod +x index.sh`
 4. `./index.sh`
 
