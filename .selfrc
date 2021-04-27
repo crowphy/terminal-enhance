@@ -1,0 +1,6 @@
+rfs () { git checkout master && git pull origin master && rf story -w 10032121 -n "$1" | sed "s/✔  创建需求单成功//g" | xargs rf start }
+
+alias ti="tnpm install"
+alias tis="tnpm install -S"
+alias tis="tnpm install -D"
+alias tig="sudo tnpm install -g"
