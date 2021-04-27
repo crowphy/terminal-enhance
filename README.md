@@ -7,6 +7,7 @@
 2. `cd terminal-enhance`
 3. `chmod +x index.sh`
 4. `./index.sh`
+5. 重启终端
 
 ## 插件
 1. 命令提示: `zsh-autosuggestions`
