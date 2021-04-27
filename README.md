@@ -1,11 +1,14 @@
-# 终端命令组合
+# 终端命令组合与美化
 ## 使用说明:
 1. `git clone https://github.com/crowphy/command-combination.git`
 2. `cd command-combination`
 3. `chmod +x index.sh`
 4. `./index.sh`
 
-## 当前涵盖的命令别名
+## 插件
+1. 命令提示: `zsh-autosuggestions`
+2. 语法高亮: `zsh-syntax-highlighting`
+## 别名
 ```shell
 alias gn="git clone"
 

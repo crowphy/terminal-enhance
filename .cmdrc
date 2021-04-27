@@ -1,3 +1,8 @@
+# add(务必保证插件顺序，zsh-syntax-highlighting必须在最后一个)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+source ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 ## git相关
 alias gn="git clone"
 
