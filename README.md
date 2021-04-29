@@ -1,13 +1,12 @@
 # 终端命令组合与美化
 >一键安装常用的终端插件，组合常用的命令，让你少敲几下键盘
-## 效果
+## 效果(简写、提示、高亮)
 ![](./example.png)
 ## 使用说明:
 1. `git clone https://github.com/crowphy/terminal-enhance.git`
 2. `cd terminal-enhance`
-3. `chmod +x index.sh`
-4. `./index.sh`
-5. 重启终端
+3. `./index.sh`(如果没有权限则执行`chmod +x index.sh`)
+4. `source ~/.zshrc`
 
 ## 插件
 1. 命令提示: `zsh-autosuggestions`
