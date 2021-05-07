@@ -3,10 +3,8 @@
 ## 效果(简写、提示、高亮)
 ![](./example.png)
 ## 使用说明:
-1. `git clone https://github.com/crowphy/terminal-enhance.git`
-2. `cd terminal-enhance`
-3. `./index.sh`(如果没有权限则执行`chmod +x index.sh`)
-4. `source ~/.zshrc`
+1. `sh -c "$(curl -fsSL https://raw.github.com/crowphy/terminal-enhance/master/index.sh)"`
+2. `source ~/.zshrc`
 
 ## 插件
 1. 命令提示: `zsh-autosuggestions`

@@ -2,7 +2,7 @@
 ###
  # @Author: crowphy
  # @Date: 2021-04-26 18:42:25
- # @LastEditTime: 2021-04-29 15:30:25
+ # @LastEditTime: 2021-05-07 11:55:38
  # @LastEditors: crowphywu
  # @Description: In User Settings Edit
  # @FilePath: /beautify-terminal/index.sh
@@ -14,6 +14,7 @@ if [[ $ohmyzshconf == "" ]]
 then
     sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 else 
+    # 先备份
     cp ~/.zshrc ~/.zshrc_backup
 fi
 
@@ -33,36 +34,18 @@ if [[ $autosuggestions == "" ]]
 then
     git clone https://github.com/zsh-users/zsh-autosuggestions.git
 fi
-# 回到命令执行目录
-cd $curpath
 
-cmdrcpath="$(pwd)/$(dirname $0)/.cmdrc"
+# 在home目录下存放.commoncmdrc配置文件
+cd ~
+curl -fsSL https://raw.github.com/crowphy/terminal-enhance/master/.commoncmdrc >> .commoncmdrc
+echo "source ~/.commoncmdrc" >> ~/.zshrc
 
-cmdrcexist="$(cat ~/.zshrc | grep ${cmdrcpath})"
-
-if [[ $cmdrcexist ]]
+privatecmdrc="$(ls -a ~ | grep .privatecmdrc)"
+# 创建私有命令配置文件
+if [[ $privatecmdrc == "" ]]
 then
-    echo .cmdrc path has existed
-else
-    echo "source ${cmdrcpath}" >> ~/.zshrc
-fi
-# 自己用的一些特殊组合
-selfrcpath="$(pwd)/$(dirname $0)/.selfrc"
-
-if [ -f $selfrcpath ]
-then
-    echo .selfrc has existed
-else
-    touch .selfrc
-fi
-
-selfrcexist="$(cat ~/.zshrc | grep ${selfrcpath})"
-
-if [[ $selfrcexist ]]
-then
-    echo ".selfrc path has existed in .zshrc"
-else
-    echo "source ${selfrcpath}" >> ~/.zshrc
+    touch .privatecmdrc
+    echo "source ~/.privatecmdrc" >> ~/.zshrc
 fi
 
 echo done
