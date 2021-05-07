@@ -2,7 +2,7 @@
 ###
  # @Author: crowphy
  # @Date: 2021-04-26 18:42:25
- # @LastEditTime: 2021-05-07 11:55:38
+ # @LastEditTime: 2021-05-07 12:15:16
  # @LastEditors: crowphywu
  # @Description: In User Settings Edit
  # @FilePath: /beautify-terminal/index.sh
@@ -38,7 +38,12 @@ fi
 # 在home目录下存放.commoncmdrc配置文件
 cd ~
 curl -fsSL https://raw.github.com/crowphy/terminal-enhance/master/.commoncmdrc >> .commoncmdrc
-echo "source ~/.commoncmdrc" >> ~/.zshrc
+
+commoncmdrc="$(cat ~/.zshrc | grep 'source ~/.commoncmdrc')"
+if [[ $commoncmdrc == "" ]]
+then
+    echo "source ~/.commoncmdrc" >> ~/.zshrc
+fi
 
 privatecmdrc="$(ls -a ~ | grep .privatecmdrc)"
 # 创建私有命令配置文件
