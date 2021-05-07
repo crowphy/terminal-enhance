@@ -6,26 +6,51 @@ source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighti
 ## git相关
 alias gn="git clone"
 
+alias ga="git add"
+alias gc="git checkout"
+alias gr="git rebase"
+alias gf="git fetch"
+
 alias gaa="git add ."
 alias gst="git status"
 alias gct="git checkout"
 alias gcb="git checkout -b"
 alias gcm="git add . && git commit -m"
+# 删除分支
+alias gbd="gc master && git branch -D"
+
 # 查看git提交记录
 alias gg="git log"
 alias ggo="git log --oneline"
-# 拉取远程分支到本地
+
+# 查看远程仓库的地址
+alias gmv="git remote -v"
+# 设置或移出远程仓库的地址
+alias gmao="git remote add origin"
+alias gmro="git remote remove origin"
+alias gmau="git remote add upstream"
+alias gmru="git remote remove upstream"
+
+# 拉取远程(origin)分支到本地
 gcbo () {
     git checkout -b $1 origin/$1
 }
+# 拉取远程(upstream)分支到本地
+gcbu () {
+    git checkout -b $1 upstream/$1
+}
+
 # 拉取当前分支
 alias gl="git pull"
 # 拉取当前分支并从master分支rebase
 alias glm="git pull --rebase origin master"
+
 # 推送到当前分支
 alias gp='echo 当前分支： $(git branch --show-current) && git push --force --set-upstream origin $(git branch --show-current)'
 #先从master分支rebase再推送到当前分支
-gpr () { cd $(git rev-parse --show-toplevel) && git add . && git commit -m "$1" && git pull --rebase origin master && gp }
+gpr () { 
+    cd $(git rev-parse --show-toplevel) && git add . && git commit -m "$1" && git pull --rebase origin master && gp
+}
 
 # 解决冲突
 alias grc="git add . && git rebase --continue"
