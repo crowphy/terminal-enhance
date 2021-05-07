@@ -11,12 +11,8 @@
 2. 语法高亮: `zsh-syntax-highlighting`
 ## 别名(目前都是git相关的命令别名)
 ```shell
-# add(务必保证插件顺序，zsh-syntax-highlighting必须在最后一个)
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
-source ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
 ## git相关
+
 alias gn="git clone"
 
 alias ga="git add"
@@ -29,6 +25,7 @@ alias gst="git status"
 alias gct="git checkout"
 alias gcb="git checkout -b"
 alias gcm="git add . && git commit -m"
+
 # 删除分支
 alias gbd="gc master && git branch -D"
 
