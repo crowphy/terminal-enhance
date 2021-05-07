@@ -6,10 +6,18 @@ source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighti
 ## git相关
 alias gn="git clone"
 
+alias gaa="git add ."
 alias gst="git status"
 alias gct="git checkout"
 alias gcb="git checkout -b"
 alias gcm="git add . && git commit -m"
+# 查看git提交记录
+alias gg="git log"
+alias ggo="git log --oneline"
+# 拉取远程分支到本地
+gcbo () {
+    git checkout -b $1 origin/$1
+}
 # 拉取当前分支
 alias gl="git pull"
 # 拉取当前分支并从master分支rebase
