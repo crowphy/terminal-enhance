@@ -2,7 +2,7 @@
 ###
  # @Author: crowphy
  # @Date: 2021-04-26 18:42:25
- # @LastEditTime: 2021-05-07 16:40:49
+ # @LastEditTime: 2021-05-10 15:25:51
  # @LastEditors: crowphywu
  # @Description: In User Settings Edit
  # @FilePath: /beautify-terminal/index.sh
@@ -37,7 +37,7 @@ fi
 
 # 在home目录下存放.commoncmdrc配置文件
 cd ~
-curl -fsSL https://raw.github.com/crowphy/terminal-enhance/master/.commoncmdrc >> .commoncmdrc
+curl -fsSL https://raw.github.com/crowphy/terminal-enhance/master/.commoncmdrc > .commoncmdrc
 
 commoncmdrc="$(cat ~/.zshrc | grep 'source ~/.commoncmdrc')"
 if [[ $commoncmdrc == "" ]]
