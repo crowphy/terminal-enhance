@@ -4,33 +4,14 @@ source ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 ## git相关
-alias gn="git clone"
-
-alias ga="git add"
-alias gc="git checkout"
-alias gr="git rebase"
-alias gf="git fetch"
-
-alias gaa="git add ."
-alias gst="git status"
-alias gct="git checkout"
-alias gcb="git checkout -b"
-alias gcm="git add . && git commit -m"
-# 删除分支
-alias gbd="gc master && git branch -D"
-
-# 查看git提交记录
-alias gg="git log"
-alias ggo="git log --oneline"
-
-# 查看远程仓库的地址
-alias gmv="git remote -v"
 # 设置或移出远程仓库的地址
 alias gmao="git remote add origin"
 alias gmro="git remote remove origin"
 alias gmau="git remote add upstream"
 alias gmru="git remote remove upstream"
 
+# 删除分支（会覆盖默认的别名）
+alias gbD="gc master && git branch -D"
 # 拉取远程(origin)分支到本地
 gcbo () {
     git checkout -b $1 origin/$1
@@ -40,19 +21,31 @@ gcbu () {
     git checkout -b $1 upstream/$1
 }
 
-# 拉取当前分支
-alias gl="git pull"
 # 拉取当前分支并从master分支rebase
-alias glm="git pull --rebase origin master"
+alias glrm="git pull --rebase origin master"
 
-# 推送到当前分支
-alias gp='echo 当前分支： $(git branch --show-current) && git push --force --set-upstream origin $(git branch --show-current)'
-#先从master分支rebase再推送到当前分支
+# add & commit
+alias gac="git add . && git commit -a -m"
+
+# 推送到当前分支的远程分支
+alias gpo='echo 当前分支： $(git branch --show-current) && git push --force --set-upstream origin $(git branch --show-current)'
+
+# 先从master分支rebase再推送当前分支
 gpr () { 
-    cd $(git rev-parse --show-toplevel) && git add . && git commit -m "$1" && git pull --rebase origin master && gp
+    cd $(git rev-parse --show-toplevel) && git add . && git commit -m "$1" && git pull --rebase origin master && gpo
 }
 
-# 解决冲突
-alias grc="git add . && git rebase --continue"
-alias grs="git add . && git rebase --skip"
-alias gra="git add . && git rebase --abort"
+# 解决冲突（会覆盖默认的别名）
+alias grbc="git add . && git rebase --continue"
+alias grbs="git add . && git rebase --skip"
+alias grba="git add . && git rebase --abort"
+
+## npm相关
+alias ni="npm install"
+alias nis="npm install -S"
+alias nis="npm install -D"
+alias nig="sudo npm install -g"
+alias nu="npm uninstall"
+alias nus="npm uninstall -S"
+alias nus="npm uninstall -D"
+alias nug="sudo npm uninstall -g"
