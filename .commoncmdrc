@@ -4,6 +4,8 @@ source ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 ## git相关
+alias gn="git clone"
+
 # 设置或移出远程仓库的地址
 alias gmao="git remote add origin"
 alias gmro="git remote remove origin"

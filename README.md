@@ -13,6 +13,7 @@
 macOS(*nix)的终端工具其实已经自带了许多命名别名，通过执行`alias`即可查看，其中大部分都是与 `git`相关的，不过基本都是单个git命令。这里针对常用的操作补充几个组合命令：
 ```shell
 ## git相关
+alias gn="git clone"
 # 设置或移出远程仓库的地址
 alias gmao="git remote add origin"
 alias gmro="git remote remove origin"
