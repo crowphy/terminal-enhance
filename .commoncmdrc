@@ -24,7 +24,7 @@ gcbu () {
 }
 
 # 拉取当前分支并从master分支rebase
-alias glrm="git pull --rebase origin master"
+alias glrb="git pull --rebase origin master"
 
 # add & commit
 alias gac="git add . && git commit -a -m"
