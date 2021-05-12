@@ -1,7 +1,8 @@
 # 终端命令组合与美化
 一键安装常用的终端插件，组合常用的命令，让你少敲几下键盘
 ## 效果(简写、提示、高亮)
-![](./example.png)
+![](./gn.png)
+![](./gpr.png)
 ## 使用说明:
 1. 在你的终端下执行下面的脚本即可：
    `sh -c "$(curl -fsSL https://raw.github.com/crowphy/terminal-enhance/master/index.sh)" && source ~/.zshrc`

@@ -2,13 +2,13 @@
 ###
  # @Author: crowphy
  # @Date: 2021-04-26 18:42:25
- # @LastEditTime: 2021-05-10 15:25:51
+ # @LastEditTime: 2021-05-12 20:48:00
  # @LastEditors: crowphywu
  # @Description: In User Settings Edit
  # @FilePath: /beautify-terminal/index.sh
 ### 
 
-ohmyzshconf="$(ls -a ~ | grep .zshrc)"
+ohmyzshconf="$(ls -a ~ | grep '\.oh-my-zsh')"
 
 if [[ $ohmyzshconf == "" ]]
 then
