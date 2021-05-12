@@ -59,6 +59,12 @@ alias nu="npm uninstall"
 alias nus="npm uninstall -S"
 alias nus="npm uninstall -D"
 alias nug="sudo npm uninstall -g"
+
+## 其他
+# 创建并cd到该目录
+mdc () {
+    mkdir $1 && cd $1
+}
 ```
 ### macOS(*nix)中自带的别名设置(通过alias查看)
 ```shell
