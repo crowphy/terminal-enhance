@@ -5,7 +5,8 @@
 ![](./gpr.png)
 ## 使用说明:
 1. 在你的终端下执行下面的脚本即可：
-   `sh -c "$(curl -fsSL https://raw.github.com/crowphy/terminal-enhance/master/index.sh)" && source ~/.zshrc`
+   
+   `sh -c "$(curl -fsSL https://raw.github.com/crowphy/terminal-enhance/master/index.sh)"`
 >该脚本首先会安装[Oh My Zsh](https://ohmyz.sh/)，然后在home目录下添加两个配置文件`.commoncmdrc`和`.privatecmdrc`，`.commoncmdrc`中的配置与[远程仓库](https://github.com/crowphy/terminal-enhance/blob/master/index.sh)保持一致，若要更新，再次执行上述命令即可；`.privatecmdrc`为空文件，不会被更新，可以添加自己定义的一些快捷命令等。
 ## 插件
 1. 命令提示: `zsh-autosuggestions`

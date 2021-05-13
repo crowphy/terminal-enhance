@@ -2,7 +2,7 @@
 ###
  # @Author: crowphy
  # @Date: 2021-04-26 18:42:25
- # @LastEditTime: 2021-05-12 20:48:00
+ # @LastEditTime: 2021-05-13 10:35:34
  # @LastEditors: crowphywu
  # @Description: In User Settings Edit
  # @FilePath: /beautify-terminal/index.sh
@@ -12,7 +12,9 @@ ohmyzshconf="$(ls -a ~ | grep '\.oh-my-zsh')"
 
 if [[ $ohmyzshconf == "" ]]
 then
-    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    # 远程脚本会退出shell导致后续流程中断
+    # sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    sh ./install-ohmyzsh.sh
 else 
     # 先备份
     cp ~/.zshrc ~/.zshrc_backup
@@ -54,3 +56,5 @@ then
 fi
 
 echo done
+
+exec zsh -l
