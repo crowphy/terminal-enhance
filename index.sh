@@ -2,7 +2,7 @@
 ###
  # @Author: crowphy
  # @Date: 2021-04-26 18:42:25
- # @LastEditTime: 2021-05-13 10:42:40
+ # @LastEditTime: 2021-05-13 10:43:06
  # @LastEditors: crowphywu
  # @Description: In User Settings Edit
  # @FilePath: /beautify-terminal/index.sh
@@ -12,7 +12,7 @@ ohmyzshconf="$(ls -a ~ | grep '\.oh-my-zsh')"
 
 if [[ $ohmyzshconf == "" ]]
 then
-    # 远程脚本会退出shell导致后续流程中断
+    # 官方的远程脚本会退出shell导致后续流程中断，小改一下
     sh -c "$(curl -fsSL https://raw.github.com/crowphy/terminal-enhance/master/install-ohmyzsh.sh)"
 else 
     # 先备份
