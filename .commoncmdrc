@@ -13,13 +13,13 @@ alias gmau="git remote add upstream"
 alias gmru="git remote remove upstream"
 
 # 删除分支（会覆盖默认的别名）
-alias gbD="gc master && git branch -D"
+alias gbD="gco master && git branch -D"
 # 拉取远程(origin)分支到本地
-gcbo () {
+function gcbo {
     git checkout -b $1 origin/$1
 }
 # 拉取远程(upstream)分支到本地
-gcbu () {
+function gcbu {
     git checkout -b $1 upstream/$1
 }
 
@@ -33,7 +33,7 @@ alias gac="git add . && git commit -a -m"
 alias gpo='echo 当前分支： $(git branch --show-current) && git push --force --set-upstream origin $(git branch --show-current)'
 
 # 先从master分支rebase再推送当前分支
-gpr () { 
+function gpr { 
     cd $(git rev-parse --show-toplevel) && git add . && git commit -m "$1" && git pull --rebase origin master && gpo
 }
 
@@ -45,15 +45,21 @@ alias grba="git add . && git rebase --abort"
 ## npm相关
 alias ni="npm install"
 alias nis="npm install -S"
-alias nis="npm install -D"
+alias nid="npm install -D"
 alias nig="sudo npm install -g"
 alias nu="npm uninstall"
 alias nus="npm uninstall -S"
-alias nus="npm uninstall -D"
+alias nud="npm uninstall -D"
 alias nug="sudo npm uninstall -g"
+
+alias nd="npm run dev"
+alias nb="npm run build"
+alias ns="npm run start"
+alias nt="npm run test"
+alias nl="npm run lint"
 
 ## 其他
 # 创建并cd到该目录
-mdc () {
+function mdc {
     mkdir $1 && cd $1
 }
