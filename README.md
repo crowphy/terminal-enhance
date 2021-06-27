@@ -1,18 +1,29 @@
 # 终端命令组合与美化
+
 一键安装常用的终端插件，组合常用的命令，让你少敲几下键盘
+
 ## 效果(简写、提示、高亮)
-![](./gn.png)
-![](./gpr.png)
-## 使用说明:
+
+![gn](./gn.png)
+![gpr](./gpr.png)
+
+## 使用说明
+
 1. 在你的终端下执行下面的脚本即可：
-   
+
    `sh -c "$(curl -fsSL https://raw.github.com/crowphy/terminal-enhance/master/index.sh)"`
+
 >该脚本首先会安装[Oh My Zsh](https://ohmyz.sh/)，然后在home目录下添加两个配置文件`.commoncmdrc`和`.privatecmdrc`，`.commoncmdrc`中的配置与[远程仓库](https://github.com/crowphy/terminal-enhance/blob/master/index.sh)保持一致，若要更新，再次执行上述命令即可；`.privatecmdrc`为空文件，不会被更新，可以添加自己定义的一些快捷命令等。
+
 ## 插件
+
 1. 命令提示: `zsh-autosuggestions`
 2. 语法高亮: `zsh-syntax-highlighting`
+
 ## 别名
+
 macOS(*nix)的终端工具其实已经自带了许多命名别名，通过执行`alias`即可查看，其中大部分都是与 `git`相关的，不过基本都是单个git命令。这里针对常用的操作补充几个组合命令：
+
 ```shell
 ## git相关
 alias gn="git clone"
@@ -43,7 +54,7 @@ alias gac="git add . && git commit -a -m"
 alias gpo='echo 当前分支： $(git branch --show-current) && git push --force --set-upstream origin $(git branch --show-current)'
 
 # 先从master分支rebase再推送当前分支
-gpr () { 
+gcpr () { 
     cd $(git rev-parse --show-toplevel) && git add . && git commit -m "$1" && git pull --rebase origin master && gpo
 }
 
@@ -68,7 +79,9 @@ mdc () {
     mkdir $1 && cd $1
 }
 ```
+
 ### macOS(*nix)中自带的别名设置(通过alias查看)
+
 ```shell
 -='cd -'
 ...=../..
@@ -243,5 +256,7 @@ rd=rmdir
 run-help=man
 which-command=whence
 ```
+
 ## 其他
+
 如果有其他共享的可以直接提mr合入或者提issue

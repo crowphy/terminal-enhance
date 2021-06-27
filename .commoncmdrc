@@ -33,7 +33,7 @@ alias gac="git add . && git commit -a -m"
 alias gpo='echo 当前分支： $(git branch --show-current) && git push --force --set-upstream origin $(git branch --show-current)'
 
 # 先从master分支rebase再推送当前分支
-function gpr { 
+function gcpr { 
     cd $(git rev-parse --show-toplevel) && git add . && git commit -m "$1" && git pull --rebase origin master && gpo
 }
 
