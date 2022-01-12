@@ -5,6 +5,8 @@ source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighti
 
 ## git相关
 alias gn="git clone"
+# 克隆指定分支
+alias gnb="git clone -b"
 
 # 设置或移出远程仓库的地址
 alias gmao="git remote add origin"
