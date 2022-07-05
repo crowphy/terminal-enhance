@@ -2,11 +2,15 @@
 
 一键安装常用的终端插件，组合常用的命令，让你少敲几下键盘
 
-## 效果(简写、提示、高亮)
+[TOC]
+## 前言
+你是否在提交代码的时候还在使用`git add .`然后`git commit -m 'xxx'`最后再`git push`（在这之前可能还要再`git fetch/rebase/pull`更新一下）？然鹅大多数情况下只有`commit`的时候才需要填写自定义的信息，如果把这三个命令或者其他常见的组合命令合为一个操作是不是能帮我们省不少事？
 
-![gn](./gn.png)
-![gpr](./gpr.png)
+## 先效果(简写、提示、高亮)
 
+
+![demo](./demo.gif)
+> 这里`gst`代表的是`git status`、`gcpr`代表了前言所说的几个操作的组合、`nis`表示`npm instal1 -S`。绿色代表这个命令是存在的，红色代表命令不存在，同时也会提示之前的输入记录。
 ## 使用说明
 
 1. 在你的终端下执行下面的脚本即可：
@@ -27,6 +31,9 @@ macOS(*nix)的终端工具其实已经自带了许多命名别名，通过执行
 ```shell
 ## git相关
 alias gn="git clone"
+# 克隆指定分支
+alias gnb="git clone -b"
+
 # 设置或移出远程仓库的地址
 alias gmao="git remote add origin"
 alias gmro="git remote remove origin"
@@ -48,7 +55,7 @@ gcbu () {
 alias glrb="git pull --rebase origin master"
 
 # add & commit
-alias gac="git add . && git commit -a -m"
+alias gac="git add . && git commit -m"
 
 # 推送到当前分支的远程分支
 alias gpo='echo 当前分支： $(git branch --show-current) && git push --force --set-upstream origin $(git branch --show-current)'
@@ -72,6 +79,11 @@ alias nu="npm uninstall"
 alias nus="npm uninstall -S"
 alias nus="npm uninstall -D"
 alias nug="sudo npm uninstall -g"
+alias nt="npm run test"
+alias nc="npm run cov"
+alias nd="npm run dev"
+alias nb="npm run build"
+alias nl="npm run lint"
 
 ## 其他
 # 创建并cd到该目录
