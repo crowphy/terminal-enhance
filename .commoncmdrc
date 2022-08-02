@@ -15,7 +15,7 @@ alias gmau="git remote add upstream"
 alias gmru="git remote remove upstream"
 
 # 删除分支（会覆盖默认的别名）
-alias gbD="gco master && git branch -D"
+alias gbD="git branch -D"
 # 拉取远程(origin)分支到本地
 function gcbo {
     git checkout -b $1 origin/$1
