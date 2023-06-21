@@ -73,7 +73,7 @@ alias grba="git add . && git rebase --abort"
 ## npm相关
 alias ni="npm install"
 alias nis="npm install -S"
-alias nis="npm install -D"
+alias nid="npm install -D"
 alias nig="sudo npm install -g"
 alias nu="npm uninstall"
 alias nus="npm uninstall -S"
