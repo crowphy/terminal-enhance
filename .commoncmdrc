@@ -25,8 +25,8 @@ function gcbu {
     git checkout -b $1 upstream/$1
 }
 
-# 拉取当前分支并从master分支rebase
-alias glrb="git pull --rebase origin master"
+# 拉取当前分支并从main分支rebase
+alias glrb="git pull --rebase origin main"
 
 # add & commit
 alias gac="git add . && git commit -a -m"
@@ -34,9 +34,9 @@ alias gac="git add . && git commit -a -m"
 # 推送到当前分支的远程分支
 alias gpo='echo 当前分支： $(git branch --show-current) && git push --force --set-upstream origin $(git branch --show-current)'
 
-# 先从master分支rebase再推送当前分支
+# 先从main分支rebase再推送当前分支
 function gcpr { 
-    cd $(git rev-parse --show-toplevel) && git add . && git commit -m "$1" && git pull --rebase origin master && gpo
+    cd $(git rev-parse --show-toplevel) && git add . && git commit -m "$1" && git pull --rebase origin main && gpo
 }
 
 # 解决冲突（会覆盖默认的别名）
@@ -64,4 +64,34 @@ alias nl="npm run lint"
 # 创建并cd到该目录
 function mdc {
     mkdir $1 && cd $1
+}
+
+# 发布alpha包
+function rea {
+    cur_branch=$(git branch --show-current)
+    echo 当前分支：$cur_branch
+    temp_branch=$(echo $cur_branch | sed 's/feature/alpha/g' | sed 's/bugfix/alpha/g')
+    gbD  $temp_branch
+    gcb $temp_branch
+    echo 发布分支：${temp_branch}
+    gpo
+    echo 推送$temp_branch分支
+    gco $cur_branch
+    gbD  $temp_branch
+    echo 删除$temp_branch分支
+}
+
+# 发布beta包
+function reb {
+    cur_branch=$(git branch --show-current)
+    echo 当前分支：$cur_branch
+    temp_branch=$(echo $cur_branch | sed 's/feature/beta/g' | sed 's/bugfix/beta/g')
+    gbD  $temp_branch
+    gcb $temp_branch
+    echo 发布分支：${temp_branch}
+    gpo
+    echo 推送$temp_branch分支
+    gco $cur_branch
+    gbD  $temp_branch
+    echo 删除$temp_branch分支
 }
